@@ -1,0 +1,27 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+
+type Book {
+  title: String
+  author: Author
+}
+
+type Author {
+  name: String
+  books: [Book]
+}
+
+
+input AuthorInput { 
+  name: String
+}
+
+extend type Query { 
+  books: [Book]
+  authorsByObject(author: AuthorInput): [Author]
+  authors: [Author]
+}
+

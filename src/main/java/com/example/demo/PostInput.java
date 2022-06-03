@@ -1,5 +1,7 @@
 package com.example.demo;
 
+
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,14 +9,14 @@ import lombok.Setter;
 @Getter
 @Setter 
 @Builder
-public class Post {
+public class PostInput {
   private String id;
   private String title;
   private String category;
   private String authorId;
-  public Post() {
+  private PostInput() {
   }
-  public Post(String id, String title, String category, String authorId) {
+  private PostInput(String id, String title, String category, String authorId) {
     this.id = id;
     this.title = title;
     this.category = category;

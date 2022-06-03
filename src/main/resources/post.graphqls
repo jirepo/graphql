@@ -11,9 +11,19 @@ type Post {
     authorId: String!
 }
 
+
+input PostInput {
+    title: String!
+    category: String
+    authorId: String!
+}
+
+
+
 # The Root Query for the application
 type Query {
     recentPosts(count: Int, offset: Int): [Post]!
+    recentPostsAll: [Post]!
 }
 
 #The Root Mutation for the application
@@ -22,6 +32,7 @@ type Mutation {
     Create a new post
     """
     addPost(id: String!, title: String!, category: String, authorId: String) : Post!
+    addPostWithInput(postInput: PostInput) : [Post]!
 }
 
 
