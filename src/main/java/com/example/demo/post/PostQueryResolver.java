@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.post;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
 
 @Component 
-public class Query implements GraphQLQueryResolver {
+public class PostQueryResolver implements GraphQLQueryResolver {
 
   public List<Post> getRecentPosts(int count, int offset) {
     List<Post> list = new ArrayList<Post>() {

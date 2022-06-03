@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.post;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 public class GraphqlConfiguration {
 
   @Bean
-  public Query query() {
-      return new Query();
+  public PostQueryResolver query() {
+      return new PostQueryResolver();
   }
   
 }///~

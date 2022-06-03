@@ -4,15 +4,43 @@ schema {
 }
 
 
+type Address { 
+  city : String 
+}
 type User {
     id: ID
     name: String
     age: Int
+    address: Address 
+
 }
+
+input AddressInput { 
+  city: String
+}
+
+input UserInput {
+    id: ID
+    name: String
+    age: Int
+    address: AddressInput 
+}
+
+
+enum AllowedColor {
+  RED
+  GREEN
+  BLUE
+}
+
+
 
 extend type Query {
   user(id:String): User!
+  favoriteColor: AllowedColor  # enum return type
+  avatar(allowedColor:AllowedColor): String # string return type
 }
 extend type Mutation { 
   addUser(id: String!, name:String!, age:Int!): User!
+  addUserWithObject(user: UserInput!): User!
 }

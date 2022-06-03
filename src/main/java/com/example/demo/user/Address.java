@@ -7,11 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class User {
-  String id; 
-  String name; 
-  int age; 
-  Address address;
+public class Address {
+  String city;
+  public Address() {
+  }
+  public Address(String city) {
+    this.city = city;
+  }
+  
 }
-
-
